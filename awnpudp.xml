@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>plg_system_awnpudp</name>
+	<author>Artelweb.ru</author>
+	<creationDate>May 2020</creationDate>
+	<copyright>Copyright (C) 2020 Artelweb. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>pavel.odokienko@gmail.com</authorEmail>
+	<authorUrl>http://np.artelweb.ru</authorUrl>
+	<version>1.0.1</version>
+	<description>PLG_AWNPUDP_XML_DESCRIPTION</description>
+	<files>
+		<folder>Assets</folder>
+		<folder>Fields</folder>
+		<folder>sql</folder>
+		<filename plugin="awnpudp">awnpudp.php</filename>
+		<filename>NovaPoshtaApi2.php</filename>
+		<filename>README.md</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_awnpudp.ini</language>
+		<language tag="en-GB">en-GB.plg_system_awnpudp.sys.ini</language>
+		<language tag="ru-RU">ru-RU.plg_system_awnpudp.ini</language>
+		<language tag="ru-RU">ru-RU.plg_system_awnpudp.sys.ini</language>
+		<language tag="uk-UA">uk-UA.plg_system_awnpudp.ini</language>
+		<language tag="uk-UA">uk-UA.plg_system_awnpudp.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="np_api_key"
+					type="text"
+					label="PLG_SYSTEM_AWNPUDP_API_KEY"
+					description="PLG_SYSTEM_AWNPUDP_API_KEY_DESC"
+					default=""
+					required="true"
+				/>
+				<fieldset addfieldpath="/plugins/system/awnpudp/Fields" />
+				<field name="v"
+					type="updatewarehouses"
+
+					class="__v"
+					filter="raw" />
+			</fieldset>
+		</fields>
+	</config>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/awnpudp.install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/awnpudp.uninstall.sql</file>
+        </sql>
+    </uninstall>
+</extension>
